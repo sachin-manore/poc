@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.1.2" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Libraries.Common.Events\Libraries.Common.Events.csproj" />
+    <ProjectReference Include="..\ServiceName.Api.Model\ServiceName.Api.Model.csproj" />
+    <ProjectReference Include="..\ServiceName.Data\ServiceName.Data.csproj" />
+    <ProjectReference Include="..\ServiceName.Service\ServiceName.Service.csproj" />
+  </ItemGroup>
+
+</Project>

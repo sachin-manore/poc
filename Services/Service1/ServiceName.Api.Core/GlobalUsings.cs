@@ -1,0 +1,10 @@
+﻿global using Libraries.Abstract.BaseController;
+global using Libraries.Abstract.Models;
+global using Libraries.Common.Exceptions;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.Extensions.Logging;
+global using ServiceName.Api.Model.Responses;
+global using ServiceName.Service.IService;
+global using Swashbuckle.AspNetCore.Annotations;
+global using System.Net;
+global using Libraries.Common.Event;

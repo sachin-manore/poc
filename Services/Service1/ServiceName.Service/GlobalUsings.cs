@@ -1,0 +1,12 @@
+﻿global using Libraries.Abstract.Data;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using ServiceName.Api.Model.Models;
+global using ServiceName.Data.DataModel;
+global using ServiceName.Data.Entity;
+global using ServiceName.Service.Helper;
+global using ServiceName.Service.IService;
+global using Newtonsoft.Json;
+global using Microsoft.Extensions.Logging;
+global using RestSharp;
+global using ServiceName.Api.Model.Responses;
