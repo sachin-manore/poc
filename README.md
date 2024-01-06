@@ -3,10 +3,15 @@ This POC is develop using .NET environments, leveraging ASP.NET Core Web API app
 
 ##TOOLS 
 Microsoft Visual Studio Solution File, Format Version 12.00
+
 Visual Studio Version 17
+
 VisualStudioVersion = 17.6.33815.320
+
 MinimumVisualStudioVersion = 10.0.40219.1
+
 SQL server 2017
+
 .Net 7.0
 
 ## Run and debug Start
