@@ -24,9 +24,11 @@ SQL server 2017
     poc\DataBase\SQL_Script.sql
     ```
 3. Add connection string in appsettings.json.
+    ```
+    "poc_entities": "Server=;Initial Catalog=;Persist Security Info=False;User ID=;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
+    ```
 
-
-4. Add integration API details.
+5. Add integration API details.
 ```
     IntegrationEnpoint: https://v3.football.api-sports.io/fixtures
     IntegrationApiKey: {Your Api key}
