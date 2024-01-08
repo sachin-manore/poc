@@ -31,12 +31,10 @@ SQL server 2017
 ``````
 4. Add integration API details.
 
-    ```
     "IntegrationEnpoint": "https://v3.football.api-sports.io/fixtures"
     "IntegrationApiKey": "{Your Api key}"
     "IntegrationApiHost": "v3.football.api-sports.io"
- 
-    ```
+
 
 # Build an run application using IISExpress
 Default Service will run on ```https://localhost:44324/```
