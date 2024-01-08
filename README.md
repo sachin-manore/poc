@@ -26,7 +26,7 @@ SQL server 2017
 3. Add connection string in appsettings.json.
     
     ```
-      poc_entities: Server={Your Server Name};Initial Catalog={DataBase Name};Persist Security Info=False;User ID={User Id};Password={Password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;
+      poc_entities: Server={Your Server Name};Initial Catalog={DataBase Name};Persist Security Info=False;User ID={User Id};Password={Password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30
   
 ```
 3. Add connection string in appsettings.json.
