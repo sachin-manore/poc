@@ -20,7 +20,7 @@ SQL server 2017
     git clone https://github.com/sachin-manore/poc.git
     ```
 2. Create DataBase by running SQL Script.
-    
+    ```
     poc\DataBase\SQL_Script.sql
     ```
 3. Add connection string in appsettings.json.
