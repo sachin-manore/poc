@@ -24,19 +24,14 @@ SQL server 2017
     poc\DataBase\SQL_Script.sql
     ```
 3. Add connection string in appsettings.json.
-    
-    ```
-      poc_entities: Server={Your Server Name};Initial Catalog={DataBase Name};Persist Security Info=False;User ID={User Id};Password={Password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30
-  
-```
-3. Add connection string in appsettings.json.
+
 
 4. Add integration API details.
-
+```
     IntegrationEnpoint: https://v3.football.api-sports.io/fixtures
     IntegrationApiKey: {Your Api key}
     IntegrationApiHost: v3.football.api-sports.io
-
+```
 
 # Build an run application using IISExpress
 Default Service will run on ```https://localhost:44324/```
