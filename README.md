@@ -32,8 +32,8 @@ SQL server 2017
 4. Add integration API details.
 
     ```
-    "IntegrationEnpoint": "https://v3.football.api-sports.io/fixtures",
-    "IntegrationApiKey": "{Your Api key}",
+    "IntegrationEnpoint": "https://v3.football.api-sports.io/fixtures"
+    "IntegrationApiKey": "{Your Api key}"
     "IntegrationApiHost": "v3.football.api-sports.io"
  
     ```
