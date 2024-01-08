@@ -29,7 +29,8 @@ SQL server 2017
     "ConnectionStrings": {
     "poc_entities": "Server={Your Server Name};Initial Catalog={DataBase Name};Persist Security Info=False;User ID={User Id};Password={Password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
   }
-    ```
+```
+
 4. Add integration API details.
     ```
     "appsettings": {
