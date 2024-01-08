@@ -19,19 +19,27 @@ SQL server 2017
     ```
     git clone https://github.com/sachin-manore/poc.git
     ```
-2. Install all dependencies by running npm install.
-    Switch to the "develop" branch.
+2. Create DataBase by running SQL Script.
+    
+    poc\DataBase\SQL_Script.sql
     ```
-    cd Znode-Webstore
-    git checkout develop
+3. Add connection string in appsettings.json.
+    
     ```
-3. Install all dependencies by running npm install.
-    Start the development server with npm start.
+    "ConnectionStrings": {
+    "poc_entities": "Server={Your Server Name};Initial Catalog={DataBase Name};Persist Security Info=False;User ID={User Id};Password={Password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
+  }
     ```
-    npm install
+4. Add integration API details.
     ```
-4. Start the development server with npm start.
+    "appsettings": {
+
+    "IntegrationEnpoint": "https://v3.football.api-sports.io/fixtures",
+    "IntegrationApiKey": "{Your Api key}",
+    "IntegrationApiHost": "v3.football.api-sports.io"
+
+  }
     ```
-    npm run dev
-    ```
-Default Application will run on ```http://localhost:3000```
+Build an run application using IISExpress
+Default Service will run on ```https://localhost:44324/```
+API Gateways will run on ```https://localhost:44325/```
