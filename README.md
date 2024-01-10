@@ -23,7 +23,7 @@ SQL server 2017
     ```
     poc\DataBase\SQL_Script.sql
     ```
-3. Add connection string in appsettings.json.
+3. Add connection string in Service1\ServiceName.Api.Web\appsettings.json.
     ```
     "poc_entities": "Server=;Initial Catalog=;Persist Security Info=False;User ID=;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
     ```
@@ -34,7 +34,20 @@ SQL server 2017
     IntegrationApiKey: {Your Api key}
     IntegrationApiHost: v3.football.api-sports.io
 ```
+6. How to generate Integration Api Key
+   ```
+   http://www.api-football.com/documentation-v3#section/Authentication
+   ```
+   
+##Construct and execute the application using IISExpress
 
-## Build an run application using IISExpress
-Default Service will run on ```https://localhost:44324/```
-API Gateways will run on ```https://localhost:44325/```
+###Configure multiple startup projects
+```
+   1. Begin by right-clicking on the .sln file.
+   2. Opt for "Configure Startup projects."
+   3. Choose the "Multiple startup projects" option.
+   4. Pick the ApiGateways Project and designate the action as "Start."
+   5. Choose the ServiceName.Api.Web Project and set the action to "Start" as well.
+   Initiate the application.
+  ``` 
+By default, the ServiceName.Api.Web service will be accessible at ```https://localhost:44324/``` while ApiGateways will be available at ```https://localhost:44325/.```
