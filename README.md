@@ -39,9 +39,9 @@ SQL server 2017
    http://www.api-football.com/documentation-v3#section/Authentication
    ```
    
-##Construct and execute the application using IISExpress
+## Construct and execute the application using IISExpress
 
-###Configure multiple startup projects
+### Configure multiple startup projects
 ```
    1. Begin by right-clicking on the .sln file.
    2. Opt for "Configure Startup projects."
