@@ -54,24 +54,6 @@ By default, the ServiceName.Api.Web service will be accessible at ``` https://lo
 
 ## Testing with Swagger (ServiceName.Api.Web)
 
-    1. Open your web browser and navigate to the Swagger UI for your API. Typically, it should be something like: 
-    ``` 
-    https://localhost:44324/swagger/index.html. 
-    ```
-    
-    2. Look for the listed API endpoints, and find the /sport/syncdatafromapi endpoint.
-    
-    3. Click on the /sport/syncdatafromapi endpoint to expand it.
-    
-    4. Once expanded, you should see a "Try it out" button. Click on it.
-    
-    5. Then, click the "Execute" button.
-    
-    6. Review the response from the API. If the sync is successful, you can proceed to the next step.
-    
-    7. Now, find the /sport/getfixtures endpoint and repeat the process: click on it, click "Try it out," and click "Execute."
-    
-    8. Review the response to ensure that you are getting the synced data from the application database.
 
 ## Testing with ApiGateways
 1. Open your preferred API testing tool or use a web browser.
