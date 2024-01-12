@@ -11,10 +11,10 @@
       ],
       "UpstreamPathTemplate": "/sport/syncfixture",
       "UpstreamHttpMethod": [ "Get" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TestKey",
-        "AllowedScopes": []
-      }
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "TestKey",
+      //  "AllowedScopes": []
+      //}
 
     },
     {
@@ -28,10 +28,10 @@
       ],
       "UpstreamPathTemplate": "/sport/getfixtures",
       "UpstreamHttpMethod": [ "Get" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TestKey",
-        "AllowedScopes": []
-      }
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "TestKey",
+      //  "AllowedScopes": []
+      //}
     }
   ],
   "GlobalConfiguration": {
