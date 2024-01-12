@@ -50,10 +50,14 @@ SQL server 2017
    5. Choose the ServiceName.Api.Web Project and set the action to "Start" as well.
    Initiate the application.
   ``` 
-By default, the ServiceName.Api.Web service will be accessible at ```https://localhost:44324/``` while ApiGateways will be available at ```https://localhost:44325/.```
+By default, the ServiceName.Api.Web service will be accessible at ``` https://localhost:44324/ ``` while ApiGateways will be available at ``` https://localhost:44325/. ```
 
 ## Testing with Swagger (ServiceName.Api.Web)
-    1. Open your web browser and navigate to the Swagger UI for your API. Typically, it should be something like: ``` https://localhost:44324/swagger/index.html. ```
+
+    1. Open your web browser and navigate to the Swagger UI for your API. Typically, it should be something like: 
+    ``` 
+    https://localhost:44324/swagger/index.html. 
+    ```
     
     2. Look for the listed API endpoints, and find the /sport/syncdatafromapi endpoint.
     
