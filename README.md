@@ -55,9 +55,9 @@ By default, the ServiceName.Api.Web service will be accessible at ``` https://lo
 ## Testing with Swagger (ServiceName.Api.Web)
 
 1. Open your web browser and navigate to the Swagger UI for your API. Typically, it should be something like: 
-    
+    ```
     https://localhost:44324/swagger/index.html. 
-    
+    ```
     
 2. Look for the listed API endpoints, and find the /sport/syncdatafromapi endpoint.
     
