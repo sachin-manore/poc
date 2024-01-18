@@ -1,22 +1,25 @@
-﻿namespace ServiceName.Data.DataModel;
+﻿using System;
+using System.Collections.Generic;
 
-public partial class league
+namespace ServiceName.Data.DataModel;
+
+public partial class League
 {
-    public int leagueid { get; set; }
+    public int LeagueId { get; set; }
 
-    public int? fixtureid { get; set; }
+    public int? FixtureId { get; set; }
 
-    public string? name { get; set; }
+    public string? Name { get; set; }
 
-    public string? country { get; set; }
+    public string? Country { get; set; }
 
-    public string? logo { get; set; }
+    public string? Logo { get; set; }
 
-    public string? flag { get; set; }
+    public string? Flag { get; set; }
 
-    public string? season { get; set; }
+    public string? Season { get; set; }
 
-    public string? round { get; set; }
+    public string? Round { get; set; }
 
-    public virtual fixture? fixture { get; set; }
+    public virtual Fixture? Fixture { get; set; }
 }

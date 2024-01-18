@@ -3,25 +3,25 @@ using System.Collections.Generic;
 
 namespace ServiceName.Data.DataModel;
 
-public partial class team
+public partial class Team
 {
-    public int teamsid { get; set; }
+    public int TeamsId { get; set; }
 
-    public int? fixtureid { get; set; }
+    public int? FixtureId { get; set; }
 
-    public string? teamlocation { get; set; }
+    public string? TeamLocation { get; set; }
 
-    public int? externalid { get; set; }
+    public int? ExternalId { get; set; }
 
-    public string? name { get; set; }
+    public string? Name { get; set; }
 
-    public string? logo { get; set; }
+    public string? Logo { get; set; }
 
-    public bool winner { get; set; }
+    public bool Winner { get; set; }
 
-    public int? goals { get; set; }
+    public int? Goals { get; set; }
 
-    public virtual fixture? fixture { get; set; }
+    public virtual Fixture? Fixture { get; set; }
 
-    public virtual ICollection<score> scores { get; } = new List<score>();
+    public virtual ICollection<Score> Scores { get; } = new List<Score>();
 }

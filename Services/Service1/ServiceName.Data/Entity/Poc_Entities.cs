@@ -1,7 +1,8 @@
-﻿using Libraries.Abstract.Data;
+﻿using System;
+using System.Collections.Generic;
+using Libraries.Abstract.Data;
 
 using Microsoft.EntityFrameworkCore;
-
 using ServiceName.Data.DataModel;
 
 namespace ServiceName.Data.Entity;
@@ -17,121 +18,117 @@ public partial class Poc_Entities : AbstractDbContext
     {
     }
 
-    public virtual DbSet<fixture> fixtures { get; set; }
+    public virtual DbSet<Fixture> Fixtures { get; set; }
 
-    public virtual DbSet<league> leagues { get; set; }
+    public virtual DbSet<League> Leagues { get; set; }
 
-    public virtual DbSet<period> periods { get; set; }
+    public virtual DbSet<PerIod> PerIods { get; set; }
 
-    public virtual DbSet<score> scores { get; set; }
+    public virtual DbSet<Score> Scores { get; set; }
 
-    public virtual DbSet<status> statuses { get; set; }
+    public virtual DbSet<Status> Statuses { get; set; }
 
-    public virtual DbSet<team> teams { get; set; }
+    public virtual DbSet<Team> Teams { get; set; }
 
-    public virtual DbSet<venue> venues { get; set; }
+    public virtual DbSet<Venue> Venues { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("name=poc_entities");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<fixture>(entity =>
+        modelBuilder.Entity<Fixture>(entity =>
         {
-            entity.ToTable("fixture");
+            entity.ToTable("Fixture");
 
-            entity.Property(e => e.date).HasColumnType("datetime");
-            entity.Property(e => e.referee).HasMaxLength(50);
-            entity.Property(e => e.timestamp).HasMaxLength(50);
-            entity.Property(e => e.timezone)
+            entity.Property(e => e.Date).HasColumnType("datetime");
+            entity.Property(e => e.Referee).HasMaxLength(50);
+            entity.Property(e => e.Timestamp).HasMaxLength(50);
+            entity.Property(e => e.Timezone)
                 .HasMaxLength(10)
                 .IsFixedLength();
         });
 
-        modelBuilder.Entity<league>(entity =>
+        modelBuilder.Entity<League>(entity =>
         {
-            entity.ToTable("league");
+            entity.ToTable("League");
 
-            entity.Property(e => e.country).HasMaxLength(50);
-            entity.Property(e => e.flag).HasMaxLength(50);
-            entity.Property(e => e.logo).HasMaxLength(50);
-            entity.Property(e => e.name).HasMaxLength(50);
-            entity.Property(e => e.round)
+            entity.Property(e => e.Country).HasMaxLength(50);
+            entity.Property(e => e.Flag).HasMaxLength(50);
+            entity.Property(e => e.Logo).HasMaxLength(50);
+            entity.Property(e => e.Name).HasMaxLength(50);
+            entity.Property(e => e.Round)
                 .HasMaxLength(10)
                 .IsFixedLength();
-            entity.Property(e => e.season)
-                .HasMaxLength(10)
-                .IsFixedLength();
-
-            entity.HasOne(d => d.fixture).WithMany(p => p.leagues)
-                .HasForeignKey(d => d.fixtureid)
-                .HasConstraintName("FK_league_fixture");
-        });
-
-        modelBuilder.Entity<period>(entity =>
-        {
-            entity.HasKey(e => e.periodsid);
-
-            entity.Property(e => e.first).HasMaxLength(50);
-            entity.Property(e => e.second).HasMaxLength(50);
-
-            entity.HasOne(d => d.fixture).WithMany(p => p.periods)
-                .HasForeignKey(d => d.fixtureid)
-                .HasConstraintName("FK_periods_fixture");
-        });
-
-        modelBuilder.Entity<score>(entity =>
-        {
-            entity.ToTable("score");
-
-            entity.HasOne(d => d.team).WithMany(p => p.scores)
-                .HasForeignKey(d => d.teamid)
-                .HasConstraintName("FK_score_score");
-        });
-
-        modelBuilder.Entity<status>(entity =>
-        {
-            entity.ToTable("status");
-
-            entity.Property(e => e._long)
-                .HasMaxLength(50)
-                .HasColumnName("long");
-            entity.Property(e => e._short)
-                .HasMaxLength(50)
-                .HasColumnName("short");
-            entity.Property(e => e.elapsed)
+            entity.Property(e => e.Season)
                 .HasMaxLength(10)
                 .IsFixedLength();
 
-            entity.HasOne(d => d.fixture).WithMany(p => p.statuses)
-                .HasForeignKey(d => d.fixtureid)
-                .HasConstraintName("FK_status_fixture");
+            entity.HasOne(d => d.Fixture).WithMany(p => p.Leagues)
+                .HasForeignKey(d => d.FixtureId)
+                .HasConstraintName("FK_League_Fixture");
         });
 
-        modelBuilder.Entity<team>(entity =>
+        modelBuilder.Entity<PerIod>(entity =>
         {
-            entity.HasKey(e => e.teamsid);
+            entity.HasKey(e => e.PeriodsId).HasName("PK_Periods");
 
-            entity.Property(e => e.logo).HasMaxLength(50);
-            entity.Property(e => e.name).HasMaxLength(50);
-            entity.Property(e => e.teamlocation).HasMaxLength(50);
+            entity.Property(e => e.First).HasMaxLength(50);
+            entity.Property(e => e.Second).HasMaxLength(50);
 
-            entity.HasOne(d => d.fixture).WithMany(p => p.teams)
-                .HasForeignKey(d => d.fixtureid)
-                .HasConstraintName("FK_teams_fixture");
+            entity.HasOne(d => d.Fixture).WithMany(p => p.PerIods)
+                .HasForeignKey(d => d.FixtureId)
+                .HasConstraintName("FK_Periods_Fixture");
         });
 
-        modelBuilder.Entity<venue>(entity =>
+        modelBuilder.Entity<Score>(entity =>
         {
-            entity.ToTable("venue");
+            entity.ToTable("Score");
 
-            entity.Property(e => e.city).HasMaxLength(50);
-            entity.Property(e => e.name).HasMaxLength(50);
+            entity.HasOne(d => d.Team).WithMany(p => p.Scores)
+                .HasForeignKey(d => d.TeamId)
+                .HasConstraintName("FK_Score_Score");
+        });
 
-            entity.HasOne(d => d.fixture).WithMany(p => p.venues)
-                .HasForeignKey(d => d.fixtureid)
+        modelBuilder.Entity<Status>(entity =>
+        {
+            entity.ToTable("Status");
+
+            entity.Property(e => e.Elapsed)
+                .HasMaxLength(10)
+                .IsFixedLength();
+            entity.Property(e => e.Long).HasMaxLength(50);
+            entity.Property(e => e.Short).HasMaxLength(50);
+
+            entity.HasOne(d => d.Fixture).WithMany(p => p.Statuses)
+                .HasForeignKey(d => d.FixtureId)
+                .HasConstraintName("FK_Status_Fixture");
+        });
+
+        modelBuilder.Entity<Team>(entity =>
+        {
+            entity.HasKey(e => e.TeamsId);
+
+            entity.Property(e => e.Logo).HasMaxLength(50);
+            entity.Property(e => e.Name).HasMaxLength(50);
+            entity.Property(e => e.TeamLocation).HasMaxLength(50);
+
+            entity.HasOne(d => d.Fixture).WithMany(p => p.Teams)
+                .HasForeignKey(d => d.FixtureId)
+                .HasConstraintName("FK_Teams_Fixture");
+        });
+
+        modelBuilder.Entity<Venue>(entity =>
+        {
+            entity.ToTable("Venue");
+
+            entity.Property(e => e.City).HasMaxLength(50);
+            entity.Property(e => e.Name).HasMaxLength(50);
+
+            entity.HasOne(d => d.Fixture).WithMany(p => p.Venues)
+                .HasForeignKey(d => d.FixtureId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_venue_fixture");
+                .HasConstraintName("FK_Venue_Fixture");
         });
 
         OnModelCreatingPartial(modelBuilder);

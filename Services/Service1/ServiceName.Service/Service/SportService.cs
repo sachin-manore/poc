@@ -11,13 +11,13 @@ namespace ServiceName.Service.Service
         private readonly IServiceProvider _serviceProvider;
         private readonly IWebClientHelper _webClientHelper;
         private readonly IConfiguration _configuration;
-        protected readonly IRepository<fixture> _fixtureRepository;
+        protected readonly IRepository<Fixture> _fixtureRepository;
         public SportService(IServiceProvider serviceProvider, IWebClientHelper webClientHelper, IConfiguration configuration)
         {
             _serviceProvider = serviceProvider;
             _webClientHelper = webClientHelper;
             _configuration = configuration;
-            _fixtureRepository = new Repository<fixture>(serviceProvider.GetService<Poc_Entities>());
+            _fixtureRepository = new Repository<Fixture>(serviceProvider.GetService<Poc_Entities>());
         }
 
         public Task<bool> SyncDataFromApi()
@@ -63,7 +63,7 @@ namespace ServiceName.Service.Service
         public Task<FixtureListResponse> GetFixtureFromDb()
         {
             //Get recored from table
-            List<fixture> _fixtures = _fixtureRepository.Table.ToList();
+            List<Fixture> _fixtures = _fixtureRepository.Table.ToList();
 
 
             if (_fixtures.Any())

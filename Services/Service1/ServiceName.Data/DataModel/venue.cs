@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace ServiceName.Data.DataModel;
 
-public partial class venue
+public partial class Venue
 {
-    public int venueid { get; set; }
+    public int VenueId { get; set; }
 
-    public int fixtureid { get; set; }
+    public int FixtureId { get; set; }
 
-    public int? externalvenueid { get; set; }
+    public int? ExternalVenueId { get; set; }
 
-    public string? name { get; set; }
+    public string? Name { get; set; }
 
-    public string? city { get; set; }
+    public string? City { get; set; }
 
-    public virtual fixture fixture { get; set; } = null!;
+    public virtual Fixture Fixture { get; set; } = null!;
 }

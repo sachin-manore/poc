@@ -24,38 +24,38 @@ namespace ServiceName.Service.Helper
         }
 
         //Map Dto to entity
-        public static fixture ToFixtureEntity(FixtureDtoModel model)
+        public static Fixture ToFixtureEntity(FixtureDtoModel model)
         {
             if (model != null)
             {
-                return new fixture
+                return new Fixture
                 {
-                    date = model.Date,
-                    externalid = model.Id,
-                    referee = model.Referee,
-                    timezone = model.Timezone,
-                    timestamp = model.Timestamp
+                    Date = model.Date,
+                    ExternalId = model.Id,
+                    Referee = model.Referee,
+                    Timezone = model.Timezone,
+                    Timestamp = model.Timestamp
                 };
             }
             return null;
         }
 
         //Map etity to response model
-        public static FixtureListResponse ToFixtureListResponse(List<fixture> fixtures)
+        public static FixtureListResponse ToFixtureListResponse(List<Fixture> fixtures)
         {
             if (fixtures != null)
             {
                 FixtureListResponse response = new FixtureListResponse { Fixtures = new List<FixtureDtoModel>() };
-                foreach (fixture fixture in fixtures)
+                foreach (Fixture fixture in fixtures)
                 {
                     response.Fixtures.Add(new FixtureDtoModel
                     {
-                        Date = fixture.date,
-                        ExternalId = fixture.externalid,
-                        Id = fixture.id,
-                        Referee = fixture.referee,
-                        Timestamp = fixture.timestamp,
-                        Timezone = fixture.timezone,
+                        Date = fixture.Date,
+                        ExternalId = fixture.ExternalId,
+                        Id = fixture.Id,
+                        Referee = fixture.Referee,
+                        Timestamp = fixture.Timestamp,
+                        Timezone = fixture.Timezone,
                         
                     });
                 }

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 namespace ServiceName.Data.DataModel;
 
-public partial class score
+public partial class Score
 {
-    public int scoreid { get; set; }
+    public int ScoreId { get; set; }
 
-    public int? teamid { get; set; }
+    public int? TeamId { get; set; }
 
-    public int? halftime { get; set; }
+    public int? Halftime { get; set; }
 
-    public int? fulltime { get; set; }
+    public int? Fulltime { get; set; }
 
-    public int? extratime { get; set; }
+    public int? Extratime { get; set; }
 
-    public int? penalty { get; set; }
+    public int? Penalty { get; set; }
 
-    public virtual team? team { get; set; }
+    public virtual Team? Team { get; set; }
 }

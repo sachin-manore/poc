@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace ServiceName.Data.DataModel;
 
-public partial class status
+public partial class Status
 {
-    public int statusid { get; set; }
+    public int StatusId { get; set; }
 
-    public int? fixtureid { get; set; }
+    public int? FixtureId { get; set; }
 
-    public string? _long { get; set; }
+    public string? Long { get; set; }
 
-    public string? _short { get; set; }
+    public string? Short { get; set; }
 
-    public string? elapsed { get; set; }
+    public string? Elapsed { get; set; }
 
-    public virtual fixture? fixture { get; set; }
+    public virtual Fixture? Fixture { get; set; }
 }

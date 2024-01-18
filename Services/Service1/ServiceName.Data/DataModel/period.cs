@@ -1,14 +1,17 @@
-﻿namespace ServiceName.Data.DataModel;
+﻿using System;
+using System.Collections.Generic;
 
-public partial class period
+namespace ServiceName.Data.DataModel;
+
+public partial class PerIod
 {
-    public int periodsid { get; set; }
+    public int PeriodsId { get; set; }
 
-    public int? fixtureid { get; set; }
+    public int? FixtureId { get; set; }
 
-    public string? first { get; set; }
+    public string? First { get; set; }
 
-    public string? second { get; set; }
+    public string? Second { get; set; }
 
-    public virtual fixture? fixture { get; set; }
+    public virtual Fixture? Fixture { get; set; }
 }
